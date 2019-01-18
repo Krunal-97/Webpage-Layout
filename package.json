@@ -1,0 +1,11 @@
+{
+  "name": "website_layout",
+  "version": "1.0.0",
+  "description": "Grid Website Layout",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o main/css/ --recursive"
+  },
+  "author": "Krunal Parmar",
+  "license": "ISC"
+}

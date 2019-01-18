@@ -1,0 +1,78 @@
+@include mediaMd {
+    #main-header {
+        .main-head {
+            .header-logo {
+                width: 60px;
+                height: 60px;
+                margin: 0.4rem; 
+            }
+            .name {
+                font-size: .5rem;
+                padding: .2rem;
+                margin-left: 0rem;
+            }
+        }
+        .nav-bar ul {
+            grid-template-columns: 1fr;
+            padding: 0rem;
+            font-size: .7rem;
+        }
+        .nav-bar li {
+            padding: .2rem;
+            border-bottom: 1px solid $primary-color;
+        }
+    }
+
+    #top-section {
+        .top-banner {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            'text' 
+            'box-a'
+            'box-b';
+        }
+
+        .top-box-a,.top-box-b {
+            h2{
+                padding-top: 0.5rem;
+            }
+        }
+        .btn {
+            margin: 1rem;
+        }
+    }
+
+    #departments {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    #blog {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'blog-img'
+        'blog-text';
+        padding:  1rem;
+        text-align: center;
+        .blog-img {
+            margin: 2rem 0;
+        }
+    }
+
+    #gallery{
+        padding: 2rem;
+    }
+
+    #footer-widget {
+        grid-template-columns: 1fr;
+        padding: 1rem 1rem;
+        line-height: 2rem;
+        grid-row-gap: 2rem;
+        h2 {
+            margin-bottom: 0rem;
+        }
+        iframe {
+            min-height: 100px;
+        }
+    }
+}

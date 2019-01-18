@@ -1,0 +1,213 @@
+@import 'config';
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: lighten($background,35);
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+.container {
+    display: grid;
+}
+
+#main-header {
+    .main-head {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas:
+        'logo name name name';
+        background: darken($primary-color,8);
+        .header-logo {
+            grid-area: logo;
+            margin: 1rem 0 1rem 6rem;
+            width:100px;
+            height: 100px; 
+        }
+        .name {
+            grid-area: name;
+            color: $text-color;
+            font-size: 1.4rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            margin-left: -3rem;
+        }
+    }
+    .nav-bar ul {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        color: $text-color;
+        font-size: 1rem;
+        text-align: center;
+        background: lighten($primary-color,15);
+        cursor: pointer;
+    }
+    .nav-bar li {
+        padding: .6rem;
+    }
+    .nav-bar li:hover {
+        background: darken($primary-color,8);
+        @include easeOut();
+    }
+}
+
+
+#top-section {
+    .top-banner{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        'text text text box-a'
+        'text text text box-b';
+        min-height: 400px;
+        background: linear-gradient(
+            to top,
+            rgba(0,45,75,0.5),
+            rgba(0,0,0,0.4)
+        ), url(../images/banner.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 1.5rem;
+        .text{
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            line-height: 4rem;
+            padding-left: 3rem;
+            h2 {
+                font-size: 3rem;
+                color: $text-color;
+            }
+            h3{
+                color: $text-color;
+                font-size: 2rem;
+            }
+        }
+    }
+    %top-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: darken($primary-color,8);
+        color: $text-color;
+        border-radius: 15px;
+    }
+    .top-box-a {
+        grid-area: box-a;
+        @extend %top-box;
+        margin: 1.6rem 1.6rem 1.6rem 1.6rem;
+    }
+    .top-box-b {
+        grid-area: box-b;
+        @extend %top-box;
+        margin: 0 1.6rem 1.6rem 1.6rem;
+    }
+    .btn {
+        @extend %button;
+    }
+}
+
+#departments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    grid-row-gap: 3rem;
+    padding: 5rem 2rem;
+    text-align: center;
+    @include underline();
+    i {
+        color: darken($primary-color,8);
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+    }
+    h3 {
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+}
+
+#blog {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    'blog-img blog-text';
+    padding: 3rem 12rem;
+    background: darken($primary-color,8);
+    .blog-img{
+        grid-area: blog-img;
+        img{
+            max-height: 250px;
+        }
+    }
+    .blog-text {
+        grid-area: blog-text;
+        line-height: 2rem;
+        color: $text-color;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 2rem;
+        }
+        a {
+            @extend %button;
+        }
+    }
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    padding: 6rem 3rem;
+    img {
+        width: 100%;
+        height: 160px;
+    }
+}
+
+#footer-widget {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: left;
+    padding: 3rem 2rem;
+    background: darken($primary-color,8);
+    color: $text-color;
+    line-height: 2rem;
+    h2{
+        font-size: 1.3rem;
+        margin-bottom: 1.8rem;
+    }
+    .widget-area-3 iframe{
+        min-height: 250px;
+    }
+}
+
+#footer {
+    background: darken($secondary-color,35);
+    color: $text-color;
+    padding: .7rem;
+    text-align: center;
+}
+@import 'responsive';
+
+
+
