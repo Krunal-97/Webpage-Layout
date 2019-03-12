@@ -1,12 +1,12 @@
 {
-  "name": "website_layout",
+  "name": "webpage-layout",
   "version": "1.0.0",
   "description": "Grid Website Layout",
   "main": "index.html",
   "homepage": "https://Krunal-97.github.io/Webpage-Layout",
   "scripts": {
     "sass": "node-sass -w scss/ -o main/css/ --recursive",
-    "deploy":"gh-pages -d main"
+    "deploy": "gh-pages -d main"
   },
   "author": "Krunal Parmar",
   "license": "ISC",
